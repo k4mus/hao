@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idUsuario",
+            "otherEntityName": "usuario",
+            "otherEntityRelationshipName": "comercio"
+        },
+        {
+            "relationshipName": "sucursal",
+            "otherEntityName": "sucursal",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idComercio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreComercio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idUsuario",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idDireccion",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161832",
+    "entityTableName": "comercio",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idRepartidor",
+            "otherEntityName": "repartidor",
+            "otherEntityRelationshipName": "vehiculo"
+        },
+        {
+            "relationshipName": "entrega",
+            "otherEntityName": "entrega",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idVehiculo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idRepartidor",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreVehiculo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "consumo",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161843",
+    "entityTableName": "vehiculo",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

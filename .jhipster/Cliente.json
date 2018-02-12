@@ -1,0 +1,34 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idUsuario",
+            "otherEntityName": "usuario",
+            "otherEntityRelationshipName": "cliente"
+        },
+        {
+            "relationshipName": "carro",
+            "otherEntityName": "carro",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idCliente",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idUsuario",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161830",
+    "entityTableName": "cliente",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

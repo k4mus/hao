@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idCarro",
+            "otherEntityName": "carro",
+            "otherEntityRelationshipName": "carroProductos"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idStockProducto",
+            "otherEntityName": "stockProducto",
+            "otherEntityRelationshipName": "carroProductos"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idCarro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idStockProducto",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "precio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "descuento",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idDireccionCliente",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161840",
+    "entityTableName": "carro_productos",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

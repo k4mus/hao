@@ -1,0 +1,42 @@
+
+<div *ngIf="carroProductos">
+    <h2><span>Carro Productos</span> {{carroProductos.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Carro</span></dt>
+        <dd>
+            <span>{{carroProductos.idCarro}}</span>
+        </dd>
+        <dt><span>Id Stock Producto</span></dt>
+        <dd>
+            <span>{{carroProductos.idStockProducto}}</span>
+        </dd>
+        <dt><span>Precio</span></dt>
+        <dd>
+            <span>{{carroProductos.precio}}</span>
+        </dd>
+        <dt><span>Descuento</span></dt>
+        <dd>
+            <span>{{carroProductos.descuento}}</span>
+        </dd>
+        <dt><span>Id Direccion Cliente</span></dt>
+        <dd>
+            <span>{{carroProductos.idDireccionCliente}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'carro-productos-my-suffix/'+ carroProductos.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

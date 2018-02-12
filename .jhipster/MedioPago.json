@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "carro",
+            "otherEntityName": "carro",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idMedioPago",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreMedioPago",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161841",
+    "entityTableName": "medio_pago",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

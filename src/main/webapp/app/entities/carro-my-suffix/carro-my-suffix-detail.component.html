@@ -1,0 +1,54 @@
+
+<div *ngIf="carro">
+    <h2><span>Carro</span> {{carro.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Carro</span></dt>
+        <dd>
+            <span>{{carro.idCarro}}</span>
+        </dd>
+        <dt><span>Id Cliente</span></dt>
+        <dd>
+            <span>{{carro.idCliente}}</span>
+        </dd>
+        <dt><span>Id Mercado</span></dt>
+        <dd>
+            <span>{{carro.idMercado}}</span>
+        </dd>
+        <dt><span>Id Medio Pago</span></dt>
+        <dd>
+            <span>{{carro.idMedioPago}}</span>
+        </dd>
+        <dt><span>Fecha</span></dt>
+        <dd>
+            <span>{{carro.fecha}}</span>
+        </dd>
+        <dt><span>Carro Productos</span></dt>
+        <dd>
+            <div *ngIf="carro.carroProductosId">
+                <a [routerLink]="['/carro-productos-my-suffix', carro.carroProductosId]">{{carro.carroProductosId}}</a>
+            </div>
+        </dd>
+        <dt><span>Lista Entrega</span></dt>
+        <dd>
+            <div *ngIf="carro.listaEntregaId">
+                <a [routerLink]="['/lista-entrega-my-suffix', carro.listaEntregaId]">{{carro.listaEntregaId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'carro-my-suffix/'+ carro.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

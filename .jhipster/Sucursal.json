@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idComercio",
+            "otherEntityName": "comercio",
+            "otherEntityRelationshipName": "sucursal"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idMecado",
+            "otherEntityName": "mercado",
+            "otherEntityRelationshipName": "sucursal"
+        },
+        {
+            "relationshipName": "stock",
+            "otherEntityName": "stock",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idSucursal",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreSucursal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idComercio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idMercado",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161834",
+    "entityTableName": "sucursal",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

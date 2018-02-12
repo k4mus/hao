@@ -1,0 +1,78 @@
+<div>
+    <h2>
+        <span>Sucursals</span>
+        <button class="btn btn-primary float-right jh-create-entity create-sucursal-my-suffix" [routerLink]="['/', { outlets: { popup: ['sucursal-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Sucursal
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sucursals">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idSucursal"><span>Id Sucursal</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nombreSucursal"><span>Nombre Sucursal</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idComercio"><span>Id Comercio</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMercado"><span>Id Mercado</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stockId"><span>Stock</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sucursal of sucursals ;trackBy: trackId">
+                <td><a [routerLink]="['../sucursal-my-suffix', sucursal.id ]">{{sucursal.id}}</a></td>
+                <td>{{sucursal.idSucursal}}</td>
+                <td>{{sucursal.nombreSucursal}}</td>
+                <td>{{sucursal.idComercio}}</td>
+                <td>{{sucursal.idMercado}}</td>
+                <td>
+                    <div *ngIf="sucursal.stockId">
+                        <a [routerLink]="['../stock-my-suffix', sucursal.stockId  ]" >{{sucursal.stockId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sucursal-my-suffix', sucursal.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sucursal-my-suffix/'+ sucursal.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sucursal-my-suffix/'+ sucursal.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="sucursals && sucursals.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

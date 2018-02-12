@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idEntrega",
+            "otherEntityName": "entrega",
+            "otherEntityRelationshipName": "listaEntrega"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idCarro",
+            "otherEntityName": "carro",
+            "otherEntityRelationshipName": "listaEntrega"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idListaEntrega",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idCarro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "unbicacion",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161845",
+    "entityTableName": "lista_entrega",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

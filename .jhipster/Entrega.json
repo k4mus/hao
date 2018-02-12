@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idVehiculo",
+            "otherEntityName": "vehiculo",
+            "otherEntityRelationshipName": "entrega"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idRuta",
+            "otherEntityName": "ruta",
+            "otherEntityRelationshipName": "entrega"
+        },
+        {
+            "relationshipName": "listaEntrega",
+            "otherEntityName": "listaEntrega",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idEntrega",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idVehiculo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idRuta",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161844",
+    "entityTableName": "entrega",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

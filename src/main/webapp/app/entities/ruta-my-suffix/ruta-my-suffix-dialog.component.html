@@ -1,0 +1,52 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myRutaLabel">Create or edit a Ruta</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!ruta.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="ruta.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_idRuta">Id Ruta</label>
+            <input type="number" class="form-control" name="idRuta" id="field_idRuta"
+                [(ngModel)]="ruta.idRuta" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_nombreRuta">Nombre Ruta</label>
+            <input type="number" class="form-control" name="nombreRuta" id="field_nombreRuta"
+                [(ngModel)]="ruta.nombreRuta" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_ubicacionOrigen">Ubicacion Origen</label>
+            <input type="text" class="form-control" name="ubicacionOrigen" id="field_ubicacionOrigen"
+                [(ngModel)]="ruta.ubicacionOrigen" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_ubicacionDestino">Ubicacion Destino</label>
+            <input type="text" class="form-control" name="ubicacionDestino" id="field_ubicacionDestino"
+                [(ngModel)]="ruta.ubicacionDestino" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" for="field_entrega">Entrega</label>
+            <select class="form-control" id="field_entrega" name="entrega" [(ngModel)]="ruta.entregaId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="entregaOption.id" *ngFor="let entregaOption of entregas; trackBy: trackEntregaById">{{entregaOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "idDireccion",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ubicacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "calle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dpto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "poblacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idComuna",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161831",
+    "entityTableName": "direccion",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

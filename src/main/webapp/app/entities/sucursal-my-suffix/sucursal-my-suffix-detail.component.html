@@ -1,0 +1,44 @@
+
+<div *ngIf="sucursal">
+    <h2><span>Sucursal</span> {{sucursal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Sucursal</span></dt>
+        <dd>
+            <span>{{sucursal.idSucursal}}</span>
+        </dd>
+        <dt><span>Nombre Sucursal</span></dt>
+        <dd>
+            <span>{{sucursal.nombreSucursal}}</span>
+        </dd>
+        <dt><span>Id Comercio</span></dt>
+        <dd>
+            <span>{{sucursal.idComercio}}</span>
+        </dd>
+        <dt><span>Id Mercado</span></dt>
+        <dd>
+            <span>{{sucursal.idMercado}}</span>
+        </dd>
+        <dt><span>Stock</span></dt>
+        <dd>
+            <div *ngIf="sucursal.stockId">
+                <a [routerLink]="['/stock-my-suffix', sucursal.stockId]">{{sucursal.stockId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sucursal-my-suffix/'+ sucursal.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

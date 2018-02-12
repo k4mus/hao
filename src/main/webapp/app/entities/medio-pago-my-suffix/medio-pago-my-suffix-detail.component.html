@@ -1,0 +1,36 @@
+
+<div *ngIf="medioPago">
+    <h2><span>Medio Pago</span> {{medioPago.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Medio Pago</span></dt>
+        <dd>
+            <span>{{medioPago.idMedioPago}}</span>
+        </dd>
+        <dt><span>Nombre Medio Pago</span></dt>
+        <dd>
+            <span>{{medioPago.nombreMedioPago}}</span>
+        </dd>
+        <dt><span>Carro</span></dt>
+        <dd>
+            <div *ngIf="medioPago.carroId">
+                <a [routerLink]="['/carro-my-suffix', medioPago.carroId]">{{medioPago.carroId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'medio-pago-my-suffix/'+ medioPago.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

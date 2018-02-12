@@ -1,0 +1,46 @@
+
+<div *ngIf="mercado">
+    <h2><span>Mercado</span> {{mercado.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Mercado</span></dt>
+        <dd>
+            <span>{{mercado.idMercado}}</span>
+        </dd>
+        <dt><span>Nombre Mercado</span></dt>
+        <dd>
+            <span>{{mercado.nombreMercado}}</span>
+        </dd>
+        <dt><span>Ubicacion</span></dt>
+        <dd>
+            <span>{{mercado.ubicacion}}</span>
+        </dd>
+        <dt><span>Sucursal</span></dt>
+        <dd>
+            <div *ngIf="mercado.sucursalId">
+                <a [routerLink]="['/sucursal-my-suffix', mercado.sucursalId]">{{mercado.sucursalId}}</a>
+            </div>
+        </dd>
+        <dt><span>Carro</span></dt>
+        <dd>
+            <div *ngIf="mercado.carroId">
+                <a [routerLink]="['/carro-my-suffix', mercado.carroId]">{{mercado.carroId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'mercado-my-suffix/'+ mercado.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

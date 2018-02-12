@@ -1,0 +1,80 @@
+<div>
+    <h2>
+        <span>Vehiculos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-vehiculo-my-suffix" [routerLink]="['/', { outlets: { popup: ['vehiculo-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Vehiculo
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="vehiculos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idVehiculo"><span>Id Vehiculo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idRepartidor"><span>Id Repartidor</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="nombreVehiculo"><span>Nombre Vehiculo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="patente"><span>Patente</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="consumo"><span>Consumo</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="entregaId"><span>Entrega</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let vehiculo of vehiculos ;trackBy: trackId">
+                <td><a [routerLink]="['../vehiculo-my-suffix', vehiculo.id ]">{{vehiculo.id}}</a></td>
+                <td>{{vehiculo.idVehiculo}}</td>
+                <td>{{vehiculo.idRepartidor}}</td>
+                <td>{{vehiculo.nombreVehiculo}}</td>
+                <td>{{vehiculo.patente}}</td>
+                <td>{{vehiculo.consumo}}</td>
+                <td>
+                    <div *ngIf="vehiculo.entregaId">
+                        <a [routerLink]="['../entrega-my-suffix', vehiculo.entregaId  ]" >{{vehiculo.entregaId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../vehiculo-my-suffix', vehiculo.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'vehiculo-my-suffix/'+ vehiculo.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'vehiculo-my-suffix/'+ vehiculo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="vehiculos && vehiculos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

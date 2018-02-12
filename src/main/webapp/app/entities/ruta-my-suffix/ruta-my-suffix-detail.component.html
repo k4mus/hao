@@ -1,0 +1,44 @@
+
+<div *ngIf="ruta">
+    <h2><span>Ruta</span> {{ruta.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Ruta</span></dt>
+        <dd>
+            <span>{{ruta.idRuta}}</span>
+        </dd>
+        <dt><span>Nombre Ruta</span></dt>
+        <dd>
+            <span>{{ruta.nombreRuta}}</span>
+        </dd>
+        <dt><span>Ubicacion Origen</span></dt>
+        <dd>
+            <span>{{ruta.ubicacionOrigen}}</span>
+        </dd>
+        <dt><span>Ubicacion Destino</span></dt>
+        <dd>
+            <span>{{ruta.ubicacionDestino}}</span>
+        </dd>
+        <dt><span>Entrega</span></dt>
+        <dd>
+            <div *ngIf="ruta.entregaId">
+                <a [routerLink]="['/entrega-my-suffix', ruta.entregaId]">{{ruta.entregaId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'ruta-my-suffix/'+ ruta.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

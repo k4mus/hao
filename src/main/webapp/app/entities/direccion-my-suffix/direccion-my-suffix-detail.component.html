@@ -1,0 +1,50 @@
+
+<div *ngIf="direccion">
+    <h2><span>Direccion</span> {{direccion.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Direccion</span></dt>
+        <dd>
+            <span>{{direccion.idDireccion}}</span>
+        </dd>
+        <dt><span>Ubicacion</span></dt>
+        <dd>
+            <span>{{direccion.ubicacion}}</span>
+        </dd>
+        <dt><span>Calle</span></dt>
+        <dd>
+            <span>{{direccion.calle}}</span>
+        </dd>
+        <dt><span>Numero</span></dt>
+        <dd>
+            <span>{{direccion.numero}}</span>
+        </dd>
+        <dt><span>Dpto</span></dt>
+        <dd>
+            <span>{{direccion.dpto}}</span>
+        </dd>
+        <dt><span>Poblacion</span></dt>
+        <dd>
+            <span>{{direccion.poblacion}}</span>
+        </dd>
+        <dt><span>Id Comuna</span></dt>
+        <dd>
+            <span>{{direccion.idComuna}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'direccion-my-suffix/'+ direccion.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

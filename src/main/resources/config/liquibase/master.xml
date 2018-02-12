@@ -5,6 +5,37 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161829_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161830_added_entity_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161831_added_entity_Direccion.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161832_added_entity_Comercio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161833_added_entity_Repartidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161834_added_entity_Sucursal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161835_added_entity_Mercado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161836_added_entity_Producto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161837_added_entity_Stock.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161838_added_entity_StockProducto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161839_added_entity_Carro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161840_added_entity_CarroProductos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161841_added_entity_MedioPago.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161842_added_entity_Ruta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161843_added_entity_Vehiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161844_added_entity_Entrega.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161845_added_entity_ListaEntrega.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180212161829_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161830_added_entity_constraints_Cliente.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161832_added_entity_constraints_Comercio.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161833_added_entity_constraints_Repartidor.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161834_added_entity_constraints_Sucursal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161835_added_entity_constraints_Mercado.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161836_added_entity_constraints_Producto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161837_added_entity_constraints_Stock.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161838_added_entity_constraints_StockProducto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161839_added_entity_constraints_Carro.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161841_added_entity_constraints_MedioPago.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161842_added_entity_constraints_Ruta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161843_added_entity_constraints_Vehiculo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180212161844_added_entity_constraints_Entrega.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,64 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idCliente",
+            "otherEntityName": "cliente",
+            "otherEntityRelationshipName": "carro"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idMercado",
+            "otherEntityName": "mercado",
+            "otherEntityRelationshipName": "carro"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idMedioPago",
+            "otherEntityName": "medioPago",
+            "otherEntityRelationshipName": "carro"
+        },
+        {
+            "relationshipName": "carroProductos",
+            "otherEntityName": "carroProductos",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "listaEntrega",
+            "otherEntityName": "listaEntrega",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idCarro",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idCliente",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idMercado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idMedioPago",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fecha",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161839",
+    "entityTableName": "carro",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

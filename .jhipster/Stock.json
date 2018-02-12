@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idSucursal",
+            "otherEntityName": "sucursal",
+            "otherEntityRelationshipName": "stock"
+        },
+        {
+            "relationshipName": "stockProducto",
+            "otherEntityName": "stockProducto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idStock",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreStock",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idSucursal",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161837",
+    "entityTableName": "stock",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

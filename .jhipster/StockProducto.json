@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idProducto",
+            "otherEntityName": "producto",
+            "otherEntityRelationshipName": "stockProducto"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idStock",
+            "otherEntityName": "stock",
+            "otherEntityRelationshipName": "stockProducto"
+        },
+        {
+            "relationshipName": "carroProductos",
+            "otherEntityName": "carroProductos",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idStockProducto",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idStock",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "idProducto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cantidad",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161838",
+    "entityTableName": "stock_producto",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

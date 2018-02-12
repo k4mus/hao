@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "sucursal",
+            "otherEntityName": "sucursal",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "carro",
+            "otherEntityName": "carro",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idMercado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreMercado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ubicacion",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161835",
+    "entityTableName": "mercado",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

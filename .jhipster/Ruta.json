@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "entrega",
+            "otherEntityName": "entrega",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idRuta",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreRuta",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ubicacionOrigen",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ubicacionDestino",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161842",
+    "entityTableName": "ruta",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

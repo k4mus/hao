@@ -1,0 +1,86 @@
+<div>
+    <h2>
+        <span>Carros</span>
+        <button class="btn btn-primary float-right jh-create-entity create-carro-my-suffix" [routerLink]="['/', { outlets: { popup: ['carro-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span >
+            Create new Carro
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="carros">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idCarro"><span>Id Carro</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idCliente"><span>Id Cliente</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMercado"><span>Id Mercado</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="idMedioPago"><span>Id Medio Pago</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="fecha"><span>Fecha</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="carroProductosId"><span>Carro Productos</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="listaEntregaId"><span>Lista Entrega</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let carro of carros ;trackBy: trackId">
+                <td><a [routerLink]="['../carro-my-suffix', carro.id ]">{{carro.id}}</a></td>
+                <td>{{carro.idCarro}}</td>
+                <td>{{carro.idCliente}}</td>
+                <td>{{carro.idMercado}}</td>
+                <td>{{carro.idMedioPago}}</td>
+                <td>{{carro.fecha}}</td>
+                <td>
+                    <div *ngIf="carro.carroProductosId">
+                        <a [routerLink]="['../carro-productos-my-suffix', carro.carroProductosId  ]" >{{carro.carroProductosId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="carro.listaEntregaId">
+                        <a [routerLink]="['../lista-entrega-my-suffix', carro.listaEntregaId  ]" >{{carro.listaEntregaId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../carro-my-suffix', carro.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'carro-my-suffix/'+ carro.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'carro-my-suffix/'+ carro.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="carros && carros.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

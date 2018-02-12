@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity MedioPago.
+    -->
+    <changeSet id="20180212161841-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="carro_id"
+                                 baseTableName="medio_pago"
+                                 constraintName="fk_medio_pago_carro_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="carro"/>
+
+    </changeSet>
+</databaseChangeLog>

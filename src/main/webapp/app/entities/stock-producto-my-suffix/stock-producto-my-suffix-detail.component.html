@@ -1,0 +1,44 @@
+
+<div *ngIf="stockProducto">
+    <h2><span>Stock Producto</span> {{stockProducto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Id Stock Producto</span></dt>
+        <dd>
+            <span>{{stockProducto.idStockProducto}}</span>
+        </dd>
+        <dt><span>Id Stock</span></dt>
+        <dd>
+            <span>{{stockProducto.idStock}}</span>
+        </dd>
+        <dt><span>Id Producto</span></dt>
+        <dd>
+            <span>{{stockProducto.idProducto}}</span>
+        </dd>
+        <dt><span>Cantidad</span></dt>
+        <dd>
+            <span>{{stockProducto.cantidad}}</span>
+        </dd>
+        <dt><span>Carro Productos</span></dt>
+        <dd>
+            <div *ngIf="stockProducto.carroProductosId">
+                <a [routerLink]="['/carro-productos-my-suffix', stockProducto.carroProductosId]">{{stockProducto.carroProductosId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'stock-producto-my-suffix/'+ stockProducto.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>

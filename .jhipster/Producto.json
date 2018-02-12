@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "stockProducto",
+            "otherEntityName": "stockProducto",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idProducto",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreProducto",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180212161836",
+    "entityTableName": "producto",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}

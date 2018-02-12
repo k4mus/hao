@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "idUsuario",
+            "otherEntityName": "usuario",
+            "otherEntityRelationshipName": "repartidor"
+        },
+        {
+            "relationshipName": "vehiculo",
+            "otherEntityName": "vehiculo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idRepartidor",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombreRepartidor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idUsuario",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20180212161833",
+    "entityTableName": "repartidor",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}
